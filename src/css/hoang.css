@@ -1,0 +1,32 @@
+/*404 not found page*/
+.notfound {
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.notfound img {
+    width: 50%;
+    margin-top: 10%;
+}
+
+@media screen and (max-width: 1200px) {
+    .notfound img {
+        width: 80%;
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .notfound img {
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .notfound img {
+        margin-top: 50%;
+
+    }
+}
