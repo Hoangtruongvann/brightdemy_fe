@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const Detail = () => {
   return React.Fragment;
 };
-export default Login;
+export default Detail;
