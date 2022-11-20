@@ -28,8 +28,7 @@ const Table = () => {
   ];
   return (
     <div className="col col-10 row">
-      <div className="mb-2">
-        <b className="fs-4"> Khóa học : </b>
+      <div className="mb-2 p-0">
         <button className="btn btn-secondary ">+</button>
       </div>
       {courses.map((course) => (
