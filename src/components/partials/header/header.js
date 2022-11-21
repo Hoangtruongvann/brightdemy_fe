@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
-const Header = () => {
+const Header = ({ navID }) => {
   const navOptions = [
-    { id: 1, name: "Trang chủ" },
-    { id: 2, name: "Khóa học" },
-    { id: 3, name: "Quản lý" },
-    { id: 4, name: "Về chúng tôi" },
+    { id: 1, name: "Trang chủ", href: "/" },
+    { id: 2, name: "Khóa học", href: "/courses" },
+    { id: 3, name: "Quản lý", href: "/" },
+    { id: 4, name: "Về chúng tôi", href: "/" },
   ];
-  const [nav, setNav] = useState(1);
+  const [nav, setNav] = useState(navID);
   const changeNav = (id) => {
     setNav(id);
   };
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light p-3 "
-      style={{ "background-color": "#e3f2fd" }}
+      style={{ backgroundColor: "#e3f2fd" }}
     >
       <button
         className="navbar-toggler"
@@ -46,7 +46,7 @@ const Header = () => {
                     ? "nav-link active text-primary fw-bold"
                     : "nav-link"
                 }
-                href="#"
+                href={item.href}
               >
                 {item.name}
               </a>
