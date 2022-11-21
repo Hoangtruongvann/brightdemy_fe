@@ -50,7 +50,7 @@ const Filter = () => {
             <div>
               <div className="form-check border rounded  px-3 py-2 d-flex align-items-center mt-2 mb-2">
                 <input type="checkbox" id={option.name} className="me-2" />
-                <label className="form-check-label  ml-2" for={option.name}>
+                <label className="form-check-label  ml-2" htmlFor={option.name}>
                   {option.name}
                 </label>
               </div>

@@ -113,7 +113,7 @@ const Footer = () => {
       </section>
       <div
         className="text-center p-4"
-        style={{ "background-color": "rgba(0, 0, 0, 0.05)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         © 2022 Copyright:{" "}
         <a className="text-reset fw-bold" href="#">

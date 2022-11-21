@@ -1,8 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({ course }) => {
+  const navigation = useNavigate();
+  const detail = (id) => {
+    navigation("/courses/detail/" + id);
+  };
   return (
-    <div className="card mb-3 ">
+    <div className="card mb-3 " onClick={() => detail(course.id - 1)}>
       <div className="row g-0">
         <div className="col-md-3">
           <img
