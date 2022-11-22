@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ navID }) => {
   const navOptions = [
@@ -8,8 +9,10 @@ const Header = ({ navID }) => {
     { id: 4, name: "Về chúng tôi", href: "/" },
   ];
   const [nav, setNav] = useState(navID);
-  const changeNav = (id) => {
+  const navigation = useNavigate();
+  const changeNav = (id, href) => {
     setNav(id);
+    navigation(href);
   };
   return (
     <nav
@@ -28,7 +31,7 @@ const Header = ({ navID }) => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a href="#">
+        <a href="/">
           <img
             className="m-2"
             src="https://img.icons8.com/ios-glyphs/30/228BE6/student-center.png"
@@ -39,7 +42,10 @@ const Header = ({ navID }) => {
         </a>
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ">
           {navOptions.map((item) => (
-            <li className="nav-item" onClick={() => changeNav(item.id)}>
+            <li
+              className="nav-item"
+              onClick={() => changeNav(item.id, item.href)}
+            >
               <a
                 className={
                   item.id === nav

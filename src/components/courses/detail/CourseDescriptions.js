@@ -3,7 +3,7 @@ import React from "react";
 const CourseDescriptions = ({ course }) => {
   return (
     <div
-      className="jumbotron mb-4"
+      className="jumbotron mb-4 pt-3 "
       style={{
         backgroundColor: "rgb(233, 233, 233)",
         borderBottom: "1px",
