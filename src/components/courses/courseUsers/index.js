@@ -12,7 +12,7 @@ const CourseUsers = () => {
     <div>
       <Header navID={2} />
 
-      <div className="container">
+      <div className="container table-user">
         <h3 className="mt-4 mb-4">
           <span className="text-primary">{course.name}</span>
         </h3>
