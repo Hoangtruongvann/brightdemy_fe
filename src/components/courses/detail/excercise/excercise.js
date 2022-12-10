@@ -28,7 +28,7 @@ const Exercise = ({ nav }) => {
         </thead>
         <tbody>
           {excercises.map((excercise) => (
-            <Item excercise={excercise} />
+            <Item excercise={excercise} key={excercise.name} />
           ))}
         </tbody>
       </table>

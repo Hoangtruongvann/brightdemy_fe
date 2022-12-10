@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+const navOptions = [
+  { id: 1, name: "Trang chủ", href: "/" },
+  { id: 2, name: "Khóa học", href: "/courses" },
+  { id: 3, name: "Quản lý", href: "/" },
+  { id: 4, name: "Về chúng tôi", href: "/" },
+];
 
 const Header = ({ navID }) => {
-  const navOptions = [
-    { id: 1, name: "Trang chủ", href: "/" },
-    { id: 2, name: "Khóa học", href: "/courses" },
-    { id: 3, name: "Quản lý", href: "/" },
-    { id: 4, name: "Về chúng tôi", href: "/" },
-  ];
   const [nav, setNav] = useState(navID);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const navigation = useNavigate();
   const changeNav = (id, href) => {
     setNav(id);
@@ -35,9 +37,10 @@ const Header = ({ navID }) => {
           <img
             className="m-2"
             src="https://img.icons8.com/ios-glyphs/30/228BE6/student-center.png"
+            alt="student-img"
           />
         </a>
-        <a className="navbar-brand font-weight-bold" href="#">
+        <a className="navbar-brand font-weight-bold" href="/">
           Brightdemy
         </a>
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ">
@@ -45,6 +48,7 @@ const Header = ({ navID }) => {
             <li
               className="nav-item"
               onClick={() => changeNav(item.id, item.href)}
+              key={item.id}
             >
               <a
                 className={
@@ -66,6 +70,7 @@ const Header = ({ navID }) => {
               <img
                 src="https://img.icons8.com/material-outlined/24/737373/search.png"
                 className="m-1"
+                alt="search-img"
               />
               <input
                 className="form-control mr-sm-2 rounded-pill"
@@ -76,15 +81,45 @@ const Header = ({ navID }) => {
             </form>
           </li>
           <li className="nav-item ml-2">
-            <a className="nav-link" href="#">
-              My profile
-            </a>
+            <Link className="nav-link" to="/profile">
+              Hồ sơ
+            </Link>
           </li>
           <li className="nav-item ml-2">
-            <img
-              className="nav-item mr-2"
-              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/40/737373/external-user-interface-kiranshastry-lineal-kiranshastry.png"
-            />
+            <div className="dropdown">
+              <button
+                className={`btn dropdown-toggle ${openDropdown && "show"}`}
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                style={{ border: "none" }}
+                onClick={() => setOpenDropdown(!openDropdown)}
+              >
+                <img
+                  className="nav-item mr-2"
+                  src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/40/737373/external-user-interface-kiranshastry-lineal-kiranshastry.png"
+                  alt="profile-img"
+                />
+              </button>
+              <ul
+                className={`dropdown-menu dropdown-menu-end ${
+                  openDropdown && "show"
+                }`}
+                aria-labelledby="dropdownMenuButton1"
+                style={{ right: "0" }}
+              >
+                <li>
+                  <Link className="dropdown-item" to="/login">
+                    Đăng nhập
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/register">
+                    Đăng ký
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

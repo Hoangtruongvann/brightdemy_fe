@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <section className="vh-100">
@@ -20,7 +20,19 @@ const Login = () => {
                   <p className="text-center fw-bold mx-3 mb-0">Đăng ký</p>
                 </div>
 
-                <div className="form-outline mb-4">
+                <div className="form-outline mb-2">
+                  <label className="form-label" htmlFor="form3Example3">
+                    Họ và tên
+                  </label>
+                  <input
+                    type="text"
+                    id="form3Example3"
+                    className="form-control form-control-lg"
+                    placeholder="Nhập họ tên"
+                  />
+                </div>
+
+                <div className="form-outline mb-2">
                   <label className="form-label" htmlFor="form3Example3">
                     Địa chỉ Email
                   </label>
@@ -32,7 +44,7 @@ const Login = () => {
                   />
                 </div>
 
-                <div className="form-outline mb-3">
+                <div className="form-outline mb-2">
                   <label className="form-label" for="form3Example4">
                     Mật khẩu
                   </label>
@@ -44,35 +56,18 @@ const Login = () => {
                   />
                 </div>
 
-                <div className="d-flex justify-content-between align-items-center">
-                  <div className="form-check mb-0">
-                    <input
-                      className="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example3"
-                    />
-                    <label className="form-check-label" for="form2Example3">
-                      Nhớ tài khoản
-                    </label>
-                  </div>
-                  <a href="#!" className="text-body">
-                    Quên mật khẩu
-                  </a>
-                </div>
-
                 <div className="text-center text-lg-start mt-4 pt-2">
                   <button
                     type="button"
                     className="btn btn-primary btn-lg"
                     style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                   >
-                    Đăng nhập
+                    Đăng ký
                   </button>
                   <p className="small fw-bold mt-2 pt-1 mb-0">
-                    Bạn chưa có tài khoản?{" "}
-                    <Link to="/register" className="link-danger">
-                      Đăng ký
+                    Bạn đã có tài khoản?{" "}
+                    <Link to="/login" className="link-danger">
+                      Đăng nhập
                     </Link>
                   </p>
                 </div>
@@ -103,4 +98,5 @@ const Login = () => {
     </>
   );
 };
-export default Login;
+
+export default Register;

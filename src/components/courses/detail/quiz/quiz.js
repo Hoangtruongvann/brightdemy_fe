@@ -28,7 +28,7 @@ const Quiz = ({ nav }) => {
         </thead>
         <tbody>
           {quizs.map((quiz) => (
-            <Item quiz={quiz} />
+            <Item quiz={quiz} key={quiz.name} />
           ))}
         </tbody>
       </table>
