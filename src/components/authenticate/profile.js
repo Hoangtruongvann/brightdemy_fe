@@ -18,20 +18,20 @@ const Profile = () => {
                     className="rounded-circle img-fluid"
                     style={{ width: "150px" }}
                   />
-                  <h5 className="my-3">John Smith</h5>
+                  <h5 className="my-3">Nguyễn Văn A</h5>
                   <p className="text-muted mb-1">Full Stack Developer</p>
-                  <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
-                  <div className="d-flex justify-content-center mb-2">
+                  <p className="text-muted mb-4">Nguyen Van Cu, Quan 5, TPHCM</p>
+                  {/* <div className="d-flex justify-content-center mb-2">
                     <button type="button" className="btn btn-primary">
-                      Follow
+                      Theo dõi
                     </button>
                     <button
                       type="button"
                       className="btn btn-outline-primary ms-1"
                     >
-                      Message
+                      Nhắn tin
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -40,10 +40,10 @@ const Profile = () => {
                 <div className="card-body">
                   <div className="row">
                     <div className="col-sm-3">
-                      <p className="mb-0">Full Name</p>
+                      <p className="mb-0">Họ và tên</p>
                     </div>
                     <div className="col-sm-9">
-                      <p className="text-muted mb-0">Johnatan Smith</p>
+                      <p className="text-muted mb-0">Nguyễn Văn A</p>
                     </div>
                   </div>
                   <hr />
@@ -58,7 +58,7 @@ const Profile = () => {
                   <hr />
                   <div className="row">
                     <div className="col-sm-3">
-                      <p className="mb-0">Phone</p>
+                      <p className="mb-0">Số điện thoại</p>
                     </div>
                     <div className="col-sm-9">
                       <p className="text-muted mb-0">(097) 234-5678</p>
@@ -67,20 +67,11 @@ const Profile = () => {
                   <hr />
                   <div className="row">
                     <div className="col-sm-3">
-                      <p className="mb-0">Mobile</p>
-                    </div>
-                    <div className="col-sm-9">
-                      <p className="text-muted mb-0">(098) 765-4321</p>
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <p className="mb-0">Address</p>
+                      <p className="mb-0">Địa chỉ</p>
                     </div>
                     <div className="col-sm-9">
                       <p className="text-muted mb-0">
-                        Bay Area, San Francisco, CA
+                        Nguyen Van Cu, Quan 5, TPHCM
                       </p>
                     </div>
                   </div>

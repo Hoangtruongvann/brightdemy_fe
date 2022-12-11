@@ -12,6 +12,7 @@ import CourseUsers from "./components/courses/courseUsers";
 import Login from "./components/authenticate/login";
 import Register from "./components/authenticate/register";
 import Profile from "./components/authenticate/profile";
+import ListUsers from "./components/users/list-users";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/list-users" element={<ListUsers />}></Route>
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -17,7 +17,7 @@ const Login = () => {
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <form>
                 <div className="divider d-flex align-items-center my-4">
-                  <p className="text-center fw-bold mx-3 mb-0">Đăng ký</p>
+                  <p className="text-center fw-bold mx-3 mb-0">Đăng nhập</p>
                 </div>
 
                 <div className="form-outline mb-4">

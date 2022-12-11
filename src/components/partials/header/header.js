@@ -6,6 +6,7 @@ const navOptions = [
   { id: 2, name: "Khóa học", href: "/courses" },
   { id: 3, name: "Quản lý", href: "/" },
   { id: 4, name: "Về chúng tôi", href: "/" },
+  { id: 5, name: "Danh sách người dùng", href: "/list-users" },
 ];
 
 const Header = ({ navID }) => {
