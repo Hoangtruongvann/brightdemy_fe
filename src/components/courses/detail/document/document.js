@@ -27,7 +27,7 @@ const Document = ({ nav }) => {
         </thead>
         <tbody>
           {documents.map((document) => (
-            <Item document={document} />
+            <Item document={document} key={document.name} />
           ))}
         </tbody>
       </table>
