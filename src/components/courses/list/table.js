@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Item from "./item";
 import Pagination from "../../partials/pagination/pagination";
-import { courses } from "../../../TestData/data";
 import { useNavigate } from "react-router-dom";
 
-const Table = () => {
-  const [page, setPage] = useState(1);
+const Table = ({ data, page, setPage }) => {
   const navigation = useNavigate();
   const toCreate = () => {
     navigation("/courses/create");
@@ -17,10 +15,17 @@ const Table = () => {
           +
         </button>
       </div>
-      {courses.map((course) => (
-        <Item course={course} />
-      ))}
-      <Pagination page={page} setPage={setPage} pages={5} />
+      {data.list && (
+        <div className="table-course">
+          {data.list.map((course) => (
+            <Item course={course} />
+          ))}
+        </div>
+      )}
+
+      {data.pages > 1 && (
+        <Pagination page={page} setPage={setPage} pages={data.pages} />
+      )}
     </div>
   );
 };
