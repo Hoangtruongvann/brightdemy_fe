@@ -7,7 +7,7 @@ const Profile = () => {
     <>
       <Header navID={2} />
       <section style={{ backgroundColor: "#eee" }}>
-        <div className="container py-5">
+        <div className="container py-5 vh-100">
           <div className="row">
             <div className="col-lg-4">
               <div className="card mb-4">
@@ -20,7 +20,9 @@ const Profile = () => {
                   />
                   <h5 className="my-3">Nguyễn Văn A</h5>
                   <p className="text-muted mb-1">Full Stack Developer</p>
-                  <p className="text-muted mb-4">Nguyen Van Cu, Quan 5, TPHCM</p>
+                  <p className="text-muted mb-4">
+                    Nguyen Van Cu, Quan 5, TPHCM
+                  </p>
                   {/* <div className="d-flex justify-content-center mb-2">
                     <button type="button" className="btn btn-primary">
                       Theo dõi

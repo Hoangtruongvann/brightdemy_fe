@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap');
+
 /*404 not found page*/
 .notfound {
     text-align: center;
@@ -30,6 +33,9 @@
 
     }
 }
+
+/*table course*/
+
 
 /* USER LIST TABLE */
 .table-user .user-list tbody td>img {
@@ -258,4 +264,51 @@
 
 .h-85 {
     height: 85vh;
+}
+
+/* Create courses*/
+/*Contact sectiom*/
+#create-courses .content-header {
+    font-family: 'Dancing Script', cursive;
+    color: #fcc500;
+    font-size: 45px;
+}
+
+#create-courses .section-content {
+    text-align: center;
+    color: white;
+}
+
+#create-courses {
+    font-family: 'Mali', cursive;
+    padding-top: 60px;
+    background: #3a6186;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3a6186 70%, #78a2f0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3a6186 70%, #78a2f0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    min-height: 90vh !important;
+    position: relative;
+}
+
+.create-courses-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.create-courses-section label {
+    color: white;
+}
+
+.submit {
+    font-size: 1.1em;
+
+    width: 200px;
+    color: #fff;
+    background-color: #5dd6c6 !important;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
 }
