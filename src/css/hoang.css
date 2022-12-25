@@ -245,3 +245,17 @@
 .bold {
     font-weight: 700 !important;
 }
+
+.ml-5 {
+    margin-left: 5px;
+}
+
+.c-des {
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.h-85 {
+    height: 85vh;
+}

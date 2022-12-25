@@ -19,10 +19,11 @@ const Document = ({ nav }) => {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Size</th>
-            <th scope="col">Download</th>
+            <th scope="col-1">#</th>
+            <th scope="col-3">Tên</th>
+            <th scope="col-5">Mô tả</th>
+            <th scope="col-2">Kích thước</th>
+            <th scope="col-2">Tải xuống</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +34,7 @@ const Document = ({ nav }) => {
       </table>
       <div className="d-flex justify-content-end">
         <button type="button" className="btn btn-primary btn-sm">
-          Add document
+          Tài liệu mới
         </button>
       </div>
     </div>

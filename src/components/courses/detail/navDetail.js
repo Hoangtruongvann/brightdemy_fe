@@ -15,7 +15,7 @@ const NavDetail = ({ nav, setNav }) => {
           onClick={() => setNav(1)}
           aria-selected={nav === 1 ? "true" : false}
         >
-          Document
+          Tài liệu
         </button>
       </li>
       <li className="nav-item" role="presentation">
@@ -30,7 +30,7 @@ const NavDetail = ({ nav, setNav }) => {
           onClick={() => setNav(2)}
           aria-selected={nav === 2 ? "true" : false}
         >
-          Exercise
+          Bài tập
         </button>
       </li>
       <li className="nav-item" role="presentation">
@@ -45,7 +45,7 @@ const NavDetail = ({ nav, setNav }) => {
           onClick={() => setNav(3)}
           aria-selected={nav === 3 ? "true" : false}
         >
-          Quiz
+          Trắc nghiệm
         </button>
       </li>
     </ul>

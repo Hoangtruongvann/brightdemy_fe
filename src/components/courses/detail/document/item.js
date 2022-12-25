@@ -5,6 +5,7 @@ const Item = ({ document }) => {
     <tr>
       <th scope="row">1</th>
       <td>{document.name}</td>
+      <td></td>
       <td>1mbs</td>
       <td>
         <img
