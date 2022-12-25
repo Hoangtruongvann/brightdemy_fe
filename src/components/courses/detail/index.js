@@ -14,8 +14,10 @@ const Detail = () => {
   return (
     <div>
       <Header navID={2} />
-      <CourseDescriptions course={course} />
-      <Table course={course} />
+      <div className="h-85">
+        <CourseDescriptions course={course} />
+        <Table course={course} />
+      </div>
       <Footer />
     </div>
   );

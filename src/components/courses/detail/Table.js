@@ -10,7 +10,7 @@ const Table = () => {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h5>Course documents</h5>
+          <h5>Nội dung</h5>
           <div className="m-3">
             <NavDetail nav={nav} setNav={setNav} />
             <div className="tab-content" id="myTabContent">

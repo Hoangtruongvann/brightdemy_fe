@@ -20,8 +20,8 @@ const Exercise = ({ nav }) => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Time</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Hạn chót</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
@@ -34,7 +34,7 @@ const Exercise = ({ nav }) => {
       </table>
       <div className="d-flex justify-content-end">
         <button type="button" className="btn btn-primary btn-sm">
-          Add exercise
+          Bài tập mới
         </button>
       </div>
     </div>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { filterOptions } from "../../../TestData/data";
 import { create } from "../../../API/courseAPI";
 
 const Form = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [descriptions, setDescription] = useState("");
   const [startDate, setStartDate] = useState("1990-01-01");
@@ -52,7 +54,9 @@ const Form = () => {
         toast.success("tạo khóa học thành công!", {
           position: "top-right",
         });
-        setStore(false);
+        setTimeout(() => {
+          navigate("/courses?status=create-success");
+        }, 2000);
       } else {
         setStore(false);
       }

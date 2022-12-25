@@ -20,8 +20,8 @@ const Quiz = ({ nav }) => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Time</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Thời gian</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
@@ -34,7 +34,7 @@ const Quiz = ({ nav }) => {
       </table>
       <div className="d-flex justify-content-end">
         <button type="button" className="btn btn-primary btn-sm">
-          Add quiz
+          Trắc nghiệm mới
         </button>
       </div>
     </div>
