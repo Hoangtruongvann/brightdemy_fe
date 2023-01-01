@@ -6,7 +6,7 @@ const Form = () => {
       <form id="algin-form">
         <div className="form-group">
           <h4>Bình luận</h4>
-          <label for="message">Nội dung</label>
+          <label htmlFor="message">Nội dung</label>
           <textarea
             name="msg"
             id=""
