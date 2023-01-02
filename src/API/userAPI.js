@@ -4,7 +4,7 @@ const cookies = new Cookies();
 const headers = {
   "Content-Type": "application/json",
   "Access-Control-Allow-Origin": "http://localhost:3000",
-  Authorization: "Bearer " + cookies.get("accessToken"),
+  authorization: "Bearer " + cookies.get("accessToken"),
 };
 export const getAllUsers = async () => {
   try {
@@ -15,5 +15,15 @@ export const getAllUsers = async () => {
     return resp.data;
   } catch (error) {
     return [];
+  }
+};
+export const blockUser = async (id) => {
+  try {
+    const resp = await axios.post("http://localhost:8090/api/block/" + id, {
+      headers: headers,
+    });
+    console.log(resp);
+  } catch (error) {
+    console.log(error);
   }
 };

@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "../../context/authContext";
+import { blockUser } from "../../API/userAPI";
 
 const Item = ({ user }) => {
+  const context = useContext(AuthContext);
+  const block = () => {
+    blockUser(user.id);
+  };
   return (
     <tr key={user.id} className="candidates-list">
       <td className="title">
@@ -61,7 +67,11 @@ const Item = ({ user }) => {
               title=""
               data-original-title="Delete"
             >
-              <i className="fa fa-ban" aria-hidden="true"></i>
+              <i
+                className="fa fa-ban"
+                aria-hidden="true"
+                onClick={() => block()}
+              ></i>
             </span>
           </li>
         </ul>
