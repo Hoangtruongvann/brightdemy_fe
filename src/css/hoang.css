@@ -315,7 +315,7 @@
 
 /*loader*/
 .loader {
-    background: linear-gradient(180deg, #dce2eb 0%, #319e59 100%);
+    background: linear-gradient(#b5cbeb 20%, #73adf8 80%);
     height: 100vh;
     position: fixed;
     width: 100%;

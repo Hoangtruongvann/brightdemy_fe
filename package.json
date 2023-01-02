@@ -1,8 +1,7 @@
 {
   "name": "brightdemy_fe",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://hoangtruongvann.github.io/brightdemy_fe/",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Cookies from "universal-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { login } from "../../API/authenAPI";
 import Footer from "../partials/footer/footer";
 import Header from "../partials/header/header";
+import AuthContext from "../../context/authContext";
 
 const Login = () => {
+  const context = useContext(AuthContext);
   const cookies = new Cookies();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,7 @@ const Login = () => {
       const resp = await login(username, password);
       if (resp) {
         cookies.set("accessToken", resp.data.accessToken);
+        context.setAuthenticate(true);
         negative("/");
       } else
         toast.error(
@@ -30,6 +33,9 @@ const Login = () => {
       });
     }
   };
+  useEffect(() => {
+    if (context.setAuthenticate) negative("/");
+  }, []);
   return (
     <>
       <Header />
