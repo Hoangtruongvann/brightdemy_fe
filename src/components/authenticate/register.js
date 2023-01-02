@@ -9,11 +9,16 @@ const Register = () => {
   const negative = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const submit = async () => {
-    if (!username || !password || !fullName || !email) {
+    if (!username || !password || !rePassword || !fullName || !email) {
       toast.warning("Vui lòng nhập đầy đủ thông tin!", {
+        position: "top-right",
+      });
+    } else if (password != rePassword) {
+      toast.warning("Mật khẩu và mật khẩu nhập lại không trùng nhau!", {
         position: "top-right",
       });
     } else {
@@ -70,6 +75,19 @@ const Register = () => {
                     placeholder="Nhập mật khẩu"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="form-outline mb-2">
+                  <label className="form-label" htmlFor="repassword">
+                    Nhập Lại Mật khẩu
+                  </label>
+                  <input
+                    type="password"
+                    id="repassword"
+                    className="form-control form-control-lg"
+                    placeholder="Nhập mật khẩu"
+                    value={rePassword}
+                    onChange={(e) => setRePassword(e.target.value)}
                   />
                 </div>
                 <div className="form-outline mb-2">

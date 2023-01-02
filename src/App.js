@@ -20,6 +20,7 @@ import AuthContext from "./context/authContext";
 import { auth } from "./API/authenAPI";
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(true);
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
     const data = await auth();
     setRole(data.role);
     setUser(data.user);
+    if (!data.user) setAuthenticate(false);
   };
   useEffect(() => {
     authen();
@@ -35,9 +37,16 @@ function App() {
   if (!loading)
     return (
       <AuthContext.Provider
-        value={{ role: role, setRole: setRole, user: user, setUser: setUser }}
+        value={{
+          authenticate,
+          setAuthenticate,
+          user: user,
+          setUser: setUser,
+          role: role,
+          setRole: setRole,
+        }}
       >
-        {user != null && (
+        {authenticate && (
           <div>
             <BrowserRouter>
               <Routes>
@@ -64,7 +73,7 @@ function App() {
             </BrowserRouter>
           </div>
         )}
-        {user === null && (
+        {!authenticate && (
           <div>
             <BrowserRouter>
               <Routes>
