@@ -28,7 +28,9 @@ export const getAllUsers = async () => {
 export const filter = async (body) => {
   const { language, framework, position, page } = body;
 
-  let data = getAllUsers();
+  // let data = getAllUsers();
+  let data = courses;
+
   if (language.length) {
     data = data.filter((e) => language.includes(e.language));
   }

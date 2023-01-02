@@ -19,9 +19,13 @@ const Item = ({ course }) => {
         <div className="col-md-9">
           <div className="card-body">
             <h5 className="card-title">{course.name}</h5>
-            <p className="card-text">{course.descriptions}</p>
+            {/* <p> Created by ...
+               <a href="">{course.ownerName}</a>
+            </p> */}
+            <p>{course.descriptions}</p>
+            <small className="text-muted">Last modified: {course.modified_date}</small>
             <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">Starts at: {course.traning_time}</small>
             </p>
           </div>
         </div>
