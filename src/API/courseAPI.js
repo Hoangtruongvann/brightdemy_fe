@@ -1,12 +1,34 @@
 import { courses } from "../TestData/data";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
 export const create = async (body) => {
   //console.log(body);
   return 200;
 };
+
+const headers = {
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "http://localhost:3000",
+  Authorization: "Bearer " + cookies.get("accessToken"),
+};
+
+export const getAllUsers = async () => {
+  try {
+    const resp = await axios.get("http://localhost:8090/api/course/list", {
+      headers: headers,
+    });
+
+    return resp.data;
+  } catch (error) {
+    return [];
+  }
+};
+
 export const filter = async (body) => {
   const { language, framework, position, page } = body;
 
-  let data = courses;
+  let data = getAllUsers();
   if (language.length) {
     data = data.filter((e) => language.includes(e.language));
   }
