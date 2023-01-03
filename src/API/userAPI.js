@@ -1,14 +1,17 @@
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+axios.defaults.headers.common["Authorization"] = `Bearer ${cookies.get(
+  "accessToken"
+)}`;
+//Header for request
 const headers = {
   "Content-Type": "application/json",
   "Access-Control-Allow-Origin": "http://localhost:3000",
-  authorization: "Bearer " + cookies.get("accessToken"),
 };
 export const getAllUsers = async () => {
   try {
-    const resp = await axios.get("http://localhost:8090/api/user/list", {
+    const resp = await axios.get("/api/user/list", {
       headers: headers,
     });
 
@@ -17,13 +20,44 @@ export const getAllUsers = async () => {
     return [];
   }
 };
+// Block user
 export const blockUser = async (id) => {
   try {
-    const resp = await axios.post("http://localhost:8090/api/block/" + id, {
-      headers: headers,
+    const resp = await axios.post("/api/block/" + id, {
+      headers: { Authorization: `Bearer ${cookies.get("accessToken")}` },
     });
     console.log(resp);
+    return resp.status;
+  } catch (error) {
+    return 400;
+  }
+};
+// Active user
+export const activeUser = async (id) => {
+  try {
+    const resp = await axios.post("/api/active/" + id, {
+      headers: { Authorization: `Bearer ${cookies.get("accessToken")}` },
+    });
+    console.log(resp);
+    return resp.status;
+  } catch (error) {
+    return 400;
+  }
+};
+//Create user
+export const createUser = async (username, password, fullName, email, role) => {
+  try {
+    const resp = await axios.post("/api/admin/create", {
+      username: username,
+      password: password,
+      fullName: fullName,
+      email: email,
+      role: role,
+    });
+    console.log(resp.status);
+    return resp;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };

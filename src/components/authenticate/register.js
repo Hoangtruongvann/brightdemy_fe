@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "../partials/header/header";
 import Footer from "../partials/footer/footer";
@@ -12,9 +12,27 @@ const Register = () => {
   const [rePassword, setRePassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  //Submit form sigup
   const submit = async () => {
-    if (!username || !password || !rePassword || !fullName || !email) {
-      toast.warning("Vui lòng nhập đầy đủ thông tin!", {
+    //validattion
+    if (!username) {
+      toast.warning("Vui lòng nhập đầy đủ thông tin username!", {
+        position: "top-right",
+      });
+    } else if (!password) {
+      toast.warning("Vui lòng nhập đầy đủ thông tin password!", {
+        position: "top-right",
+      });
+    } else if (!rePassword) {
+      toast.warning("Vui lòng nhập lại password!", {
+        position: "top-right",
+      });
+    } else if (!fullName) {
+      toast.warning("Vui lòng nhập đầy đủ thông tin Họ tên!", {
+        position: "top-right",
+      });
+    } else if (!email) {
+      toast.warning("Vui lòng nhập đầy đủ thông tin email!", {
         position: "top-right",
       });
     } else if (password != rePassword) {
@@ -25,7 +43,6 @@ const Register = () => {
       const resp = await register(username, password, fullName, email);
       if (resp) {
         negative("/login");
-        console.log(resp);
       } else {
         toast.error("Lỗi! Vui lòng thử lại sau", {
           position: "top-right",
@@ -33,6 +50,7 @@ const Register = () => {
       }
     }
   };
+  //
   return (
     <>
       <Header />
@@ -59,7 +77,7 @@ const Register = () => {
                     type="text"
                     id="username"
                     className="form-control form-control-lg"
-                    placeholder="Nhập mật khẩu"
+                    placeholder="Nhập username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
