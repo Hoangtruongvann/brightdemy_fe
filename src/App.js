@@ -26,6 +26,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const authen = async () => {
     const data = await auth();
+    console.log(data);  
     setRole(data.role);
     setUser(data.user);
     if (!data.user) setAuthenticate(false);
@@ -34,6 +35,7 @@ function App() {
     authen();
     setLoading(false);
   }, []);
+
   if (!loading)
     return (
       <AuthContext.Provider

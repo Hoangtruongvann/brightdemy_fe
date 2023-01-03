@@ -7,6 +7,7 @@ export const courses = [
     language: "HTML/CSS",
     framework: "",
     position: "Front-End",
+    modified_date: '1/1/2023'
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const courses = [
     language: "JavaScript",
     framework: "",
     position: "Front-End",
+    modified_date: '1/1/2023'
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const courses = [
     position: "Front-End",
     descriptions:
       "Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+    modified_date: '1/1/2023'
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const courses = [
     position: "Back-End",
     descriptions:
       "Khóa học Java Spring Boot từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với Java Spring Boot. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+    modified_date: '1/1/2023'
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ export const courses = [
     position: "Back-End",
     descriptions:
       "Khóa học Java Spring Boot từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với Java Spring Boot. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+    modified_date: '1/1/2023'
   },
   {
     id: 4,
@@ -52,6 +57,7 @@ export const courses = [
     position: "Back-End",
     descriptions:
       "Khóa học Java Spring Boot từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với Java Spring Boot. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+    modified_date: '1/1/2023'
   },
   {
     id: 4,
@@ -61,6 +67,7 @@ export const courses = [
     position: "Back-End",
     descriptions:
       "Khóa học Java Spring Boot từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với Java Spring Boot. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+    modified_date: '1/1/2023'
   },
 ];
 export const filterOptions = [

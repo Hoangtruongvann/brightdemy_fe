@@ -59,7 +59,7 @@ const Register = () => {
                     type="text"
                     id="username"
                     className="form-control form-control-lg"
-                    placeholder="Nhập mật khẩu"
+                    placeholder="Nhập username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
