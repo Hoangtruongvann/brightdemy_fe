@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import AuthContext from "../../context/authContext";
-import { blockUser } from "../../API/userAPI";
+import React, { useState } from "react";
+import { blockUser, activeUser } from "../../API/userAPI";
+import DetailUserModal from "./detailUserModal";
 
 const Item = ({ user }) => {
-  const context = useContext(AuthContext);
-  const block = () => {
-    blockUser(user.id);
+  const [status, setStatus] = useState(user.status === 0 ? true : false);
+  const [showDetail, setShowDetail] = useState(false);
+  const changeStatus = async () => {
+    if (status) blockUser(user.id);
+    else activeUser(user.id);
   };
   return (
     <tr key={user.id} className="candidates-list">
@@ -29,16 +31,34 @@ const Item = ({ user }) => {
           </div>
         </div>
       </td>
-      <td className="candidate-list-favorite-time text-center">
+      <td className="candidate-list-favorite-time ">
         <span className="candidate-list-time order-1">
-          <span className={user.status === 0 ? "text-success" : "text-danger"}>
-            {user.status === 0 ? "Active" : "Blocked"}
+          <span class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id={"flexSwitchCheckChecked" + user.id}
+              checked={status}
+              onClick={(e) => {
+                setStatus(!status);
+                changeStatus();
+              }}
+            />
+            <label
+              class="form-check-label"
+              htmlFor={"flexSwitchCheckChecked" + user.id}
+            >
+              <span className={status ? "text-success" : "text-danger"}>
+                {status ? "Active" : "Blocked"}
+              </span>
+            </label>
           </span>
         </span>
       </td>
       <td>
         <ul className="list-unstyled mb-0 d-flex gap-2 justify-content-center text-center">
-          <li>
+          <li onClick={() => setShowDetail(true)}>
             <span
               className="text-primary"
               data-toggle="tooltip"
@@ -66,16 +86,15 @@ const Item = ({ user }) => {
               data-toggle="tooltip"
               title=""
               data-original-title="Delete"
-            >
-              <i
-                className="fa fa-ban"
-                aria-hidden="true"
-                onClick={() => block()}
-              ></i>
-            </span>
+            ></span>
           </li>
         </ul>
       </td>
+      <DetailUserModal
+        showDetail={showDetail}
+        setShowDetail={setShowDetail}
+        user={user}
+      />
     </tr>
   );
 };
