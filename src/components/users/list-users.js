@@ -57,7 +57,7 @@ const ListUsers = () => {
                   </thead>
                   <tbody>
                     {users.map((user) => (
-                      <Item user={user} />
+                      <Item user={user} getData={getData} />
                     ))}
                   </tbody>
                 </table>

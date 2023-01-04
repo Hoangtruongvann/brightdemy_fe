@@ -1,4 +1,4 @@
-import { courses } from "../TestData/data";
+import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
@@ -9,26 +9,37 @@ const headers = {
 };
 
 export const create = async (body) => {
-  const {name, startDate, descriptions, language, framework, position, userId} = body;
+  const {
+    name,
+    startDate,
+    descriptions,
+    language,
+    framework,
+    position,
+    userId,
+  } = body;
   try {
-    const resp = await axios.post("http://localhost:8090/api/course/create", {
-      name: name,
-      description: descriptions,
-      status: 1,
-      ownerId: userId,
-      openTime: new Date(startDate),
-      language: language[0],
-      framework: framework[0],
-      position: position[0],
-      createdDate:   new Date(), 
-      modifiedDate: new Date()
-    },
-    {
-      headers: headers,
-    });
+    const resp = await axios.post(
+      "http://localhost:8090/api/course/create",
+      {
+        name: name,
+        description: descriptions,
+        status: 1,
+        ownerId: userId,
+        openTime: new Date(startDate),
+        language: language[0],
+        framework: framework[0],
+        position: position[0],
+        createdDate: new Date(),
+        modifiedDate: new Date(),
+      },
+      {
+        headers: headers,
+      }
+    );
     return 201;
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return [];
   }
 };
@@ -50,7 +61,7 @@ export const getAllCourses = async () => {
 //   })
 //     .then(result=> result.data)
 //     .catch(err => [])
-  
+
 // };
 
 export const filter = async (body) => {

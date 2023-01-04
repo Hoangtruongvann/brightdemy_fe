@@ -54,10 +54,26 @@ export const createUser = async (username, password, fullName, email, role) => {
       email: email,
       role: role,
     });
-    console.log(resp.status);
+
     return resp;
   } catch (error) {
     console.log(error);
+    return null;
+  }
+};
+//update user
+export const updateUser = async (username, password, fullName, email, role) => {
+  try {
+    const resp = await axios.put("/api/user/update", {
+      username: username,
+      password: password,
+      fullName: fullName,
+      email: email,
+      role: role,
+    });
+
+    return resp;
+  } catch (error) {
     return null;
   }
 };
