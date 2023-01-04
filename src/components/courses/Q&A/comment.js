@@ -1,6 +1,6 @@
 import React from "react";
 
-const Comment = () => {
+const Comment = ({ comment }) => {
   return (
     <div className="comment mt-4 text-justify float-left">
       <img

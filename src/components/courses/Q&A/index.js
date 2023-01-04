@@ -25,7 +25,7 @@ const QAndA = () => {
             <Comment />
             <Comment />
           </div>
-          <Form />
+          <Form coursesID={courses.ID} />
         </div>
       </div>
 

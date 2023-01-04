@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { blockUser, activeUser } from "../../API/userAPI";
 import DetailUserModal from "./detailUserModal";
+import UpdateUserModal from "./updateUserModal";
 
-const Item = ({ user }) => {
+const Item = ({ user, getData }) => {
   const [status, setStatus] = useState(user.status === 0 ? true : false);
   const [showDetail, setShowDetail] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
   const changeStatus = async () => {
     if (status) blockUser(user.id);
     else activeUser(user.id);
@@ -69,7 +71,7 @@ const Item = ({ user }) => {
               <i className="far fa-eye"></i>
             </span>
           </li>
-          <li>
+          <li onClick={() => setShowUpdate(true)}>
             <span
               href="#"
               className="text-info"
@@ -95,6 +97,12 @@ const Item = ({ user }) => {
         showDetail={showDetail}
         setShowDetail={setShowDetail}
         user={user}
+      />
+      <UpdateUserModal
+        showUpdate={showUpdate}
+        setShowUpdate={setShowUpdate}
+        user={user}
+        getData={getData}
       />
     </tr>
   );
