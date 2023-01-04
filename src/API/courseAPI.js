@@ -1,11 +1,7 @@
-import { courses } from "../TestData/data";
 import Cookies from "universal-cookie";
 import axios from "axios";
 const cookies = new Cookies();
-
-export const create = async (body) => {
-  return 200;
-};
+import axios from "axios";
 
 const headers = {
   "Content-Type": "application/json",
@@ -13,12 +9,47 @@ const headers = {
   Authorization: "Bearer " + cookies.get("accessToken"),
 };
 
-export const getAllUsers = async () => {
+export const create = async (body) => {
+  const {
+    name,
+    startDate,
+    descriptions,
+    language,
+    framework,
+    position,
+    userId,
+  } = body;
+  try {
+    const resp = await axios.post(
+      "http://localhost:8090/api/course/create",
+      {
+        name: name,
+        description: descriptions,
+        status: 1,
+        ownerId: userId,
+        openTime: new Date(startDate),
+        language: language[0],
+        framework: framework[0],
+        position: position[0],
+        createdDate: new Date(),
+        modifiedDate: new Date(),
+      },
+      {
+        headers: headers,
+      }
+    );
+    return 201;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
+export const getAllCourses = async () => {
   try {
     const resp = await axios.get("http://localhost:8090/api/course/list", {
       headers: headers,
     });
-
     return resp.data;
   } catch (error) {
     return [];
@@ -28,9 +59,7 @@ export const getAllUsers = async () => {
 export const filter = async (body) => {
   const { language, framework, position, page } = body;
 
-  // let data = getAllUsers();
-  let data = courses;
-
+  let data = await getAllCourses();
   if (language.length) {
     data = data.filter((e) => language.includes(e.language));
   }
@@ -42,10 +71,10 @@ export const filter = async (body) => {
   }
   const resp = {
     list: data.slice(
-      (page - 1 > 0 ? page - 1 : 0) * 4,
-      (page - 1 > 0 ? page - 1 : 0) * 4 + 4
+      (page - 1 > 0 ? page - 1 : 0) * 10,
+      (page - 1 > 0 ? page - 1 : 0) * 10 + 10
     ),
-    pages: Math.round(data.length / 4),
+    pages: Math.round(data.length / 10),
   };
   return resp;
 };

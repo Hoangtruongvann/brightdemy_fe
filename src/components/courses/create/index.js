@@ -21,12 +21,8 @@ const Create = () => {
                 Tạo mới một khóa học
               </span>
             </h1>
-            <h3>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </h3>
           </div>
-          <Form />
+          <Form/>
         </div>
       </div>
       <Footer />

@@ -26,7 +26,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const authen = async () => {
     const data = await auth();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 61643239397567fdcad3227a2436f75ff589e001
     setRole(data.role);
     setUser(data.user);
     if (!data.user) setAuthenticate(false);
