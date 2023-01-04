@@ -50,7 +50,7 @@ const DetailUserModal = ({ showDetail, setShowDetail, user }) => {
             type="text"
             id="role"
             className="form-control form-control-lg"
-            value={user.roleId}
+            value={user.roleName}
             disabled
           />
         </div>

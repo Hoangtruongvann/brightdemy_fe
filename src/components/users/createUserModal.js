@@ -15,7 +15,6 @@ const CreateUserModal = ({ showCreate, setShowCreate, getData }) => {
   //Get all role
   const getListRole = async () => {
     const data = await getAllRole();
-    console.log(data);
     setListRole(data);
   };
   //submit form create user
@@ -139,7 +138,6 @@ const CreateUserModal = ({ showCreate, setShowCreate, getData }) => {
             size="lg"
             onChange={(e) => {
               setRole(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value={-1} selected={role === -1}>

@@ -26,7 +26,7 @@ export const blockUser = async (id) => {
     const resp = await axios.post("/api/block/" + id, {
       headers: { Authorization: `Bearer ${cookies.get("accessToken")}` },
     });
-    console.log(resp);
+
     return resp.status;
   } catch (error) {
     return 400;
@@ -38,7 +38,7 @@ export const activeUser = async (id) => {
     const resp = await axios.post("/api/active/" + id, {
       headers: { Authorization: `Bearer ${cookies.get("accessToken")}` },
     });
-    console.log(resp);
+
     return resp.status;
   } catch (error) {
     return 400;

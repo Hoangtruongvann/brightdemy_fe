@@ -31,11 +31,12 @@ const Item = ({ user }) => {
           </div>
         </div>
       </td>
+      <td>{user.roleName}</td>
       <td className="candidate-list-favorite-time ">
         <span className="candidate-list-time order-1">
-          <span class="form-check form-switch">
+          <span className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               role="switch"
               id={"flexSwitchCheckChecked" + user.id}
@@ -46,7 +47,7 @@ const Item = ({ user }) => {
               }}
             />
             <label
-              class="form-check-label"
+              className="form-check-label"
               htmlFor={"flexSwitchCheckChecked" + user.id}
             >
               <span className={status ? "text-success" : "text-danger"}>
