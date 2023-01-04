@@ -1,9 +1,9 @@
 import { courses } from "../TestData/data";
 import Cookies from "universal-cookie";
+import axios from "axios";
 const cookies = new Cookies();
 
 export const create = async (body) => {
-  //console.log(body);
   return 200;
 };
 
