@@ -1,7 +1,6 @@
 import Cookies from "universal-cookie";
 import axios from "axios";
 const cookies = new Cookies();
-import axios from "axios";
 
 const headers = {
   "Content-Type": "application/json",
