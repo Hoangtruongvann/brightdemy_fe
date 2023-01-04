@@ -46,7 +46,6 @@ export const register = async (username, password, fullName, email) => {
         headers: headers,
       }
     );
-    console.log(resp);
     return resp;
   } catch (error) {
     return null;
