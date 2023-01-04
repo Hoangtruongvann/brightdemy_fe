@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const CourseDescriptions = ({ course }) => {
   const navigate = useNavigate();
-  
+
   return (
     <div
       className="jumbotron mb-4 pt-3  c-des "
@@ -16,12 +16,12 @@ const CourseDescriptions = ({ course }) => {
         <div className="row">
           <div className="col col-8">
             <h1>{course.name}</h1>
-            {/* <h5>
-               <a href="">owner</a>
-            </h5> */}
+            <h5>
+              <a>{course.ownerId}</a>
+            </h5>
             <p>{course.description}</p>
             <span>
-              <span>Starts at: {course.openTme} </span>
+              <span>Starts at: {course.openTime} </span>
             </span>
             <p className="mt-4">
               <a className="btn btn-primary btn-md" href="#" role="button">

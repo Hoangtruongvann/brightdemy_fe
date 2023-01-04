@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import Footer from "../../partials/footer/footer";
 import Header from "../../partials/header/header";
 import Comment from "./comment";
+import { getAllCourses } from "../../../API/courseAPI";
 
-import { courses } from "../../../TestData/data";
 import Form from "./form";
 const QAndA = () => {
   const { id } = useParams();
-  const course = courses[id];
+  const [course, setCourse] = useState({});
+  const getCourses = async () => {
+    const courses = await getAllCourses();
+    setCourse(courses.find((e) => e.id.toString() === id.toString()));
+  };
+  useEffect(() => {
+    getCourses();
+  }, []);
   return (
     <div>
       <Header navID={2} />
@@ -25,7 +32,7 @@ const QAndA = () => {
             <Comment />
             <Comment />
           </div>
-          <Form coursesID={courses.ID} />
+          <Form coursesID={course.id} />
         </div>
       </div>
 

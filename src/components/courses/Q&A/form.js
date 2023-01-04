@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import AuthContext from "../../../context/authContext";
 import { ToastContainer, toast } from "react-toastify";
-import { createComment } from "../../../API/commentAPI.JS";
+import { createComment } from "../../../API/commentAPI.js";
 
 const Form = ({ coursesID }) => {
   const context = useContext(AuthContext);

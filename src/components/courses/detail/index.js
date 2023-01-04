@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Header from "../../partials/header/header";
@@ -10,14 +10,14 @@ import { getAllCourses } from "../../../API/courseAPI";
 
 const Detail = () => {
   const { id } = useParams();
-  const [course, setCourse] = useState({})
-  const getCourses = async() => {
+  const [course, setCourse] = useState({});
+  const getCourses = async () => {
     const courses = await getAllCourses();
     setCourse(courses.find((e) => e.id.toString() === id.toString()));
-  }
+  };
   useEffect(() => {
     getCourses();
-  }, [course])
+  }, []);
   return (
     <div>
       <Header navID={2} />
@@ -27,6 +27,6 @@ const Detail = () => {
       </div>
       <Footer />
     </div>
-  )
+  );
 };
 export default Detail;

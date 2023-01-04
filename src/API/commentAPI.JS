@@ -4,11 +4,7 @@ const cookies = new Cookies();
 axios.defaults.headers.common["Authorization"] = `Bearer ${cookies.get(
   "accessToken"
 )}`;
-//Header for request
-const headers = {
-  "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "http://localhost:3000",
-};
+
 //Get All comment by courses ID
 export const GetAllCommentByID = async (id) => {
   try {
