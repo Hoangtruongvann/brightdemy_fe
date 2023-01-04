@@ -7,7 +7,7 @@ const Item = ({ course }) => {
     navigation("/courses/detail/" + id);
   };
   return (
-    <div className="card mb-3 " onClick={() => detail(course.id - 1)}>
+    <div className="card mb-3 " onClick={() => detail(course.id)}>
       <div className="row g-0">
         <div className="col-md-3">
           <img
