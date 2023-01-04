@@ -22,10 +22,10 @@ const Item = ({ course }) => {
             {/* <p> Created by ...
                <a href="">{course.ownerName}</a>
             </p> */}
-            <p>{course.descriptions}</p>
-            <small className="text-muted">Last modified: {course.modified_date}</small>
+            <p>{course.description}</p>
+            <small className="text-muted">Last modified: {course.modifiedDate.toString().slice(0,10)}</small>
             <p className="card-text">
-              <small className="text-muted">Starts at: {course.traning_time}</small>
+              <small className="text-muted">Starts at: {course.openTime.toString().slice(0,10)}</small>
             </p>
           </div>
         </div>

@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { filterOptions } from "../../../TestData/data";
 import { create } from "../../../API/courseAPI";
+import AuthContext from "../../../context/authContext";
 
 const Form = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [descriptions, setDescription] = useState("");
   const [startDate, setStartDate] = useState("1990-01-01");
-  const [language, setLanguage] = useState([]);
+  const [language, setLanguage] = useState("");
   const [framework, setFramework] = useState([]);
   const [position, setPosition] = useState([]);
   const [store, setStore] = useState(false);
+  const context = useContext(AuthContext);
+
   const Submit = async () => {
     if (!name) {
       toast.warn("Vui lòng nhập tên khóa học!", {
@@ -48,14 +51,15 @@ const Form = () => {
         language: language,
         framework: framework,
         position: position,
+        userId: context.user.id
       };
       const status = await create(body);
-      if (status === 200) {
+      if (status === 201) {
         toast.success("tạo khóa học thành công!", {
           position: "top-right",
         });
         setTimeout(() => {
-          navigate("/courses?status=create-success");
+          navigate("/courses");
         }, 2000);
       } else {
         setStore(false);
