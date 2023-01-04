@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const CourseDescriptions = ({ course }) => {
   const navigate = useNavigate();
+  
   return (
     <div
       className="jumbotron mb-4 pt-3  c-des "
@@ -18,9 +19,9 @@ const CourseDescriptions = ({ course }) => {
             {/* <h5>
                <a href="">owner</a>
             </h5> */}
-            <p>{course.descriptions}</p>
+            <p>{course.description}</p>
             <span>
-              <span>Thời gian bắt đầu: 23/01/2023 </span>
+              <span>Starts at: {course.openTme} </span>
             </span>
             <p className="mt-4">
               <a className="btn btn-primary btn-md" href="#" role="button">

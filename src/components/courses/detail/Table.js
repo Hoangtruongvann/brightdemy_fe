@@ -4,7 +4,7 @@ import Document from "./document/document";
 import Exercise from "./excercise/excercise";
 import Quiz from "./quiz/quiz";
 
-const Table = () => {
+const Table = ({course}) => {
   const [nav, setNav] = useState(1);
   return (
     <div className="container">
