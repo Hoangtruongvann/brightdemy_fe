@@ -23,7 +23,7 @@ const Header = ({ navID }) => {
     navigation(href);
   };
   const logout = () => {
-    cookies.set("accessToken", "");
+    cookies.remove("accessToken");
     context.setAuthenticate(false);
     navigation("/login");
   };

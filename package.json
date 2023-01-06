@@ -2,6 +2,7 @@
   "name": "brightdemy_fe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hoangtruongvann.github.io/brightdemy_fe/",
   "proxy": "http://localhost:8090",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
